@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Caso de estudio de Silas en la campaña MR 22: dirección de arte, automatización con IA y producción a escala con la identidad intacta.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<link rel="alternate" hreflang="pt-BR" href="https://silasrcha.github.io/portfolio-mr22/">
+<link rel="alternate" hreflang="en" href="https://silasrcha.github.io/portfolio-mr22/en.html">
+<link rel="alternate" hreflang="es" href="https://silasrcha.github.io/portfolio-mr22/es.html">
+<link rel="alternate" hreflang="x-default" href="https://silasrcha.github.io/portfolio-mr22/">
+<meta property="og:title" content="Alta demanda, identidad intacta · Silas">
+<meta property="og:description" content="Caso de estudio de Silas en la campaña MR 22: dirección de arte, automatización con IA y producción a escala con la identidad intacta.">
+<meta property="og:url" content="https://silasrcha.github.io/portfolio-mr22/es.html">
+<meta property="og:image" content="https://silasrcha.github.io/portfolio-mr22/img/og-es.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Portfolio Campaña MR 22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: ficha técnica em duas tonalidades — seções cinza-claro e grafite alternadas, guias de grid tracejadas,
+   tipografia grotesca fina, rótulos em mono, linhas de tabela e pílulas escuras; azul-aço só em linhas de destaque */
+:root{
+  --lt:#DFE0E2; --lt-panel:#E9EAEC; --lt-ink:#141519; --lt-mute:#5D6169; --lt-rule:#B8BBC1; --lt-guide:#A9ACB3;
+  --dk:#1A1B1F; --dk-panel:#232429; --dk-ink:#ECEDEF; --dk-mute:#8D919A; --dk-rule:#33353C; --dk-guide:#3F4249;
+  --lt-ink2:#353941; --dk-ink2:#C4C7CD;
+  --steel:#7FB0DE; --steel-deep:#2C5A86;
+  --sans:"Inter Tight","Helvetica Neue",Arial,system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  --wrap:1180px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--lt);color:var(--lt-ink);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3,h4{margin:0;font-weight:300;letter-spacing:-.035em;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--steel);outline-offset:3px}
+
+/* tonalidades por seção */
+.s{position:relative;background:var(--bg);color:var(--ink);overflow-x:clip}
+.lt{--ink2:var(--lt-ink2);--bg:var(--lt);--panel:var(--lt-panel);--ink:var(--lt-ink);--mute:var(--lt-mute);--rule:var(--lt-rule);--guide:var(--lt-guide);--pill-bg:var(--dk);--pill-ink:var(--dk-ink)}
+.dk{--ink2:var(--dk-ink2);--bg:var(--dk);--panel:var(--dk-panel);--ink:var(--dk-ink);--mute:var(--dk-mute);--rule:var(--dk-rule);--guide:var(--dk-guide);--pill-bg:var(--lt-panel);--pill-ink:var(--lt-ink);color-scheme:dark}
+/* guias tracejadas: bordas da coluna e meio */
+.s::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--guide) 50%,transparent 0),linear-gradient(var(--guide) 50%,transparent 0),linear-gradient(var(--guide) 50%,transparent 0);
+  background-size:1px 12px;background-repeat:repeat-y;
+  background-position:calc(50% - var(--wrap)/2) 0,50% 0,calc(50% + var(--wrap)/2) 0;opacity:.7}
+.wrap{position:relative;max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(16px,3.4vw,40px)}
+.pad{padding-block:clamp(56px,8vw,112px)}
+
+.mono,.label,figcaption,.spec{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:400}
+.label,.spec,figcaption{color:var(--mute)}
+.crumb{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);display:flex;flex-wrap:wrap;gap:6px}
+.crumb b{font-weight:500;color:var(--ink)}
+.pill{display:inline-flex;align-items:center;gap:12px;background:var(--pill-bg);color:var(--pill-ink);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:9px 14px;border-radius:6px;text-decoration:none;white-space:nowrap}
+.pill.ghost{background:transparent;color:var(--ink);border:1px solid var(--rule)}
+.muted{color:var(--mute)}
+.prose{max-width:66ch;display:grid;gap:1em;font-size:17.5px;line-height:1.65;color:var(--ink2)}
+.prose strong{font-weight:500}
+
+/* ---------- barra de navegação ---------- */
+.nav{position:sticky;top:calc(env(safe-area-inset-top,0px) + 10px);z-index:20;margin:10px auto 0;max-width:calc(var(--wrap) - 2*clamp(16px,3.4vw,40px));
+  width:calc(100% - 2*clamp(16px,3.4vw,40px));background:#16171B;color:var(--dk-ink);border:1px solid #2B2D33;border-radius:10px;
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:9px 16px;font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase}
+.nav a{text-decoration:none;color:var(--dk-mute)}
+.nav a:hover{color:var(--dk-ink)}
+.nav .l,.nav .r{display:flex;gap:18px}
+.nav .r{justify-content:flex-end}
+.nav .lang{display:flex;gap:2px;margin-left:6px;padding-left:12px;border-left:1px solid #33353C}
+.nav .lang a{padding:2px 5px;border-radius:4px}
+.nav .lang a[aria-current]{color:#16171B;background:var(--dk-ink)}
+.nav .brand{color:var(--dk-ink);display:flex;align-items:center;gap:8px}
+.nav .brand i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--steel);box-shadow:5px 5px 0 -1px var(--steel-deep)}
+
+.sig-svg{display:block;color:currentColor}
+.sig-svg.sm{width:52px;height:33px;margin-block:-8px}
+.sig-svg.lg{width:min(520px,100%);height:auto;aspect-ratio:880/555}
+/* ---------- topo ---------- */
+.hero{padding-block:clamp(28px,5vw,56px) clamp(56px,8vw,96px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:start}
+.stage{position:relative;max-width:480px;margin-left:auto}
+.hero-grid > figure .hero-cap{max-width:480px;margin-left:auto}
+.stage img{width:100%;border-radius:6px;box-shadow:0 24px 50px -24px rgba(20,21,25,.45)}
+.hero-cap{margin-top:10px}
+.hero h1{font-size:clamp(44px,5.6vw,80px);line-height:.98;margin-top:18px}
+.hero .sub{font-size:clamp(20px,2vw,26px);font-weight:300;letter-spacing:-.02em;margin-top:10px;color:var(--mute)}
+.hero .lede{margin-top:24px;font-size:18px;line-height:1.6;max-width:50ch;color:var(--ink2)}
+.hero-grid > figure{order:2}
+.specs{margin:28px 0 0;border-top:1px solid var(--ink)}
+.specs div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px dashed var(--rule);align-items:baseline}
+.specs dt{margin:0}
+.specs dd{margin:0;font-size:15px;line-height:1.45}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+
+/* ---------- números ---------- */
+.ntable{border:1px solid var(--rule);border-radius:4px}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.tile{padding:26px 28px 30px;display:grid;gap:14px;align-content:start;border-right:1px dashed var(--rule);border-bottom:1px dashed var(--rule)}
+.tile:nth-child(3n){border-right:0}
+.tile .mono{color:var(--ink)}
+.tile b{font-weight:300;font-size:clamp(48px,5.4vw,76px);letter-spacing:-.045em;line-height:.95;font-variant-numeric:tabular-nums}
+.tile b::after{content:"";display:block;width:40px;height:3px;background:var(--steel);margin-top:16px}
+.tile p{font-size:15px;line-height:1.55;color:var(--ink2);max-width:34ch}
+.nrow{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,.9fr) minmax(0,1.6fr);gap:24px;padding:22px 28px;border-bottom:1px dashed var(--rule);align-items:center}
+.nrow b{font-weight:300;font-size:clamp(38px,4.4vw,58px);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.nrow .mono{color:var(--ink)}
+.nrow p{font-size:14.5px;line-height:1.5;color:var(--mute)}
+.nfoot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 18px;padding:14px 28px;align-items:center;position:relative}
+.nfoot::before,.nfoot::after{content:"";position:absolute;bottom:10px;width:14px;height:14px;border-bottom:2px solid var(--ink)}
+.nfoot::before{left:8px;border-left:2px solid var(--ink);border-bottom-left-radius:14px}
+.nfoot::after{right:8px;border-right:2px solid var(--ink);border-bottom-right-radius:14px}
+.nfoot a{text-decoration:none;color:var(--ink)}
+
+/* ---------- títulos de seção ---------- */
+.head{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin-bottom:clamp(32px,5vw,52px)}
+.head h2{max-width:20ch}
+.head > div:empty{display:none}
+.head h2{font-size:clamp(34px,4.4vw,60px);line-height:1.02;margin-top:14px}
+.lt + .lt:not(.cont),.dk + .dk:not(.cont){box-shadow:inset 0 1px 0 var(--rule)}
+
+/* linhas numeradas (estilo acordeão aberto) */
+.rows{border-top:1px solid var(--rule)}
+.row{display:grid;grid-template-columns:56px minmax(0,1fr) 20px;gap:16px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.row h3{font-size:clamp(24px,2.4vw,32px);line-height:1.1}
+.row .body{display:grid;gap:12px;margin-top:12px;font-size:16.5px;line-height:1.65;color:var(--ink2);max-width:60ch}
+.row .body .quote{color:var(--ink);font-size:20px;font-weight:300;letter-spacing:-.02em;line-height:1.3;border-left:2px solid var(--steel);padding-left:14px}
+.row .sign{font-family:var(--mono);color:var(--ink);text-align:right}
+
+/* blocos dentro de uma seção */
+.block{margin-top:clamp(44px,6vw,72px)}
+.block-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 18px;align-items:baseline;padding-bottom:12px;border-bottom:1px solid var(--ink)}
+.block-head .label{color:var(--ink);font-weight:500}
+.sub{margin-top:30px;display:grid;gap:6px}
+.sub-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 18px;align-items:baseline}
+.sub-head h4{font-size:24px;line-height:1.15}
+
+/* tiras de peças */
+.strip{display:flex;gap:12px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x proximity;margin-top:14px;scrollbar-width:thin}
+.strip figure{margin:0;flex:0 0 auto;scroll-snap-align:start;display:grid;gap:10px;position:relative}
+.strip img{height:clamp(260px,38vw,420px);width:auto;border-radius:6px;background:var(--panel)}
+.strip.lam img{height:clamp(200px,26vw,300px)}
+.strip figcaption{max-width:34ch}
+.vid{position:absolute;top:10px;left:10px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;background:rgba(20,21,25,.82);color:#fff;padding:4px 8px;border-radius:4px}
+
+/* enxoval */
+.enx{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2.6vw,32px);margin-top:28px}
+.enx > div{display:grid;gap:12px;align-content:start}
+.disc{width:min(200px,100%);aspect-ratio:1;border-radius:50%;padding:10px;background:radial-gradient(circle at 50% 40%,#2B3A4C,#15171C 72%);box-shadow:0 0 0 1px rgba(127,176,222,.18),0 18px 40px -18px rgba(20,40,70,.6)}
+.disc img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.enx h3{font-size:26px;line-height:1.1}
+.enx p{font-size:15px;line-height:1.55;color:var(--ink2)}
+.dest{display:flex;flex-wrap:wrap;gap:5px}
+.dest img{width:clamp(30px,2.9vw,38px);height:clamp(30px,2.9vw,38px);border-radius:50%;object-fit:cover;background:var(--panel)}
+
+/* método */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,40px);margin-top:clamp(28px,4vw,48px)}
+.steps div{display:grid;gap:10px;align-content:start;padding-top:16px;border-top:2px solid var(--steel)}
+.steps h3{font-size:clamp(24px,2.4vw,30px);line-height:1.1}
+.steps p{font-size:16px;line-height:1.6;color:var(--ink2)}
+.note{margin-top:clamp(32px,4vw,48px);padding:20px 24px;border-radius:8px;background:var(--panel);font-size:16px;line-height:1.55;max-width:78ch;display:grid;gap:8px}
+
+/* listas em linhas */
+.lines{list-style:none;padding:0;margin:0;border-top:1px solid var(--rule)}
+.lines li{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px dashed var(--rule);font-size:15.5px;line-height:1.55}
+.lines li > :first-child{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);padding-top:3px}
+.lines li span:last-child{color:var(--ink2)}
+.lines.plain li{grid-template-columns:minmax(0,1fr)}
+.lines.plain li span{color:var(--ink2)}
+.lines.plain li > :first-child{font-family:var(--sans);font-size:16px;letter-spacing:0;text-transform:none;color:var(--ink2);padding-top:0}
+
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+
+/* parede de 52 */
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:6px;margin-top:18px}
+.wall img{aspect-ratio:3/4;width:100%;object-fit:cover;border-radius:3px;background:var(--panel)}
+.panel{background:var(--panel);border-radius:14px;padding:clamp(18px,3vw,36px);margin-top:clamp(32px,4vw,48px)}
+.stickers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,3vw,36px) clamp(18px,4vw,56px);align-items:center;margin-top:24px}
+.stickers figure{margin:0;display:grid;gap:10px;justify-items:start}
+.wall.stk{grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:14px 16px;margin-top:32px;align-items:center}
+.wall.stk img{aspect-ratio:auto;object-fit:contain;background:none;border-radius:0}
+
+/* estúdios */
+.shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:clamp(28px,4vw,44px)}
+.shots figure{margin:0;display:grid;gap:10px}
+.shots img{border-radius:10px;border:1px solid var(--rule)}
+
+/* tabela IA */
+.tbl{overflow-x:auto;border:1px solid var(--rule);border-radius:4px}
+table{border-collapse:collapse;width:100%;min-width:680px;font-size:15px;line-height:1.5}
+th,td{text-align:left;vertical-align:top;padding:18px 22px;border-bottom:1px dashed var(--rule)}
+th{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--rule)}
+td{color:var(--ink2)}
+td:first-child{color:var(--ink);font-size:19px;font-weight:300;letter-spacing:-.02em;width:24%}
+tr:last-child td{border-bottom:0}
+
+/* linha do tempo */
+.tl{list-style:none;padding:0;margin:0;border-top:1px solid var(--rule)}
+.tl li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:18px;padding:16px 0;border-bottom:1px dashed var(--rule);align-items:baseline}
+.tl time{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--mute);font-variant-numeric:tabular-nums}
+.tl p{font-size:16px;line-height:1.45}
+.tl li.win{border-bottom:1px solid var(--steel)}
+.tl li.win time{color:var(--steel)}
+
+/* competências: lista com barra */
+.slash{list-style:none;padding:0;margin:0;display:grid}
+.slash li{display:grid;grid-template-columns:28px minmax(0,.8fr) minmax(0,1.2fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.slash li::before{content:"/";color:var(--mute);font-weight:300;font-size:22px}
+.slash h3{font-size:clamp(22px,2.4vw,30px);line-height:1.1}
+.slash p{font-size:16px;line-height:1.6;color:var(--ink2)}
+
+/* rodapé */
+.foot{background:radial-gradient(90% 120% at 85% 100%,#2A2B30 0%,#121316 55%,#0B0B0D 100%)}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,64px);align-items:end}
+.sig{margin:0;color:var(--ink)}
+.roles-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.roles-list li{display:grid;grid-template-columns:28px 1fr;font-size:clamp(18px,1.8vw,24px);font-weight:300;letter-spacing:-.02em}
+.roles-list li::before{content:"/";color:var(--mute)}
+.notes{margin-top:clamp(40px,6vw,72px);padding-top:18px;border-top:1px dashed var(--rule);display:grid;gap:10px;font-size:13.5px;line-height:1.55;color:var(--mute);max-width:90ch}
+
+@media (max-width:900px){
+  .hero-grid,.head,.cols,.foot-grid{grid-template-columns:minmax(0,1fr)}
+  .stage{max-width:480px}
+  .enx{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .shots{grid-template-columns:minmax(0,1fr)}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tile:nth-child(3n){border-right:1px dashed var(--rule)}
+  .tile:nth-child(2n){border-right:0}
+  .nrow p{grid-column:1/-1}
+  .nav .l,.nav .nl{display:none}
+  .nav{grid-template-columns:1fr auto;justify-items:start}
+  .nav .r{display:flex}
+  .nav .lang{margin-left:0;padding-left:0;border-left:0}
+  .s::before{background-position:calc(50% - var(--wrap)/2) 0,-10px 0,calc(50% + var(--wrap)/2) 0}
+}
+@media (max-width:540px){
+  .enx{grid-template-columns:minmax(0,1fr)}
+  .tiles{grid-template-columns:minmax(0,1fr)}
+  .tile{border-right:0!important;padding:22px 20px}
+  .stickers{grid-template-columns:minmax(0,1fr)}
+  .specs div{grid-template-columns:minmax(0,1fr);gap:4px}
+  .lines li{grid-template-columns:minmax(0,1fr);gap:4px}
+  .tl li{grid-template-columns:76px minmax(0,1fr);gap:12px}
+  .slash li{grid-template-columns:22px minmax(0,1fr)}
+  .slash li p{grid-column:2}
+  .row{grid-template-columns:36px minmax(0,1fr) 14px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="assinatura" viewBox="230 45 880 555"><path fill="currentColor" fill-rule="evenodd" d="M367.9,587.1c-19.7-3-27.7-18.3-22-41.8,4.9-20.3,15.8-44.5,29.9-66.7,16.7-26.3,30.1-44.8,45-62.3,1.8-2.1,5.7-6.7,8.6-10.2,7.7-9.3,9.9-11.8,15.9-17.9,15.1-15.4,15.2-19.2,1.5-36.1-2.5-3.1-6.9-8.7-9.8-12.4-8.3-10.9-13.6-17-22.6-26-5-5-7.5-7.3-15.2-14.1-3.1-2.7-15.4-13.7-15.6-14-.2-.2-6-5.3-7.8-6.8-.9-.8-1.7-1.4-1.8-1.5-.7-.8-8.8-7.1-20.1-15.6-11.9-8.9-15.1-11.5-29-23.1-23.5-19.6-27.2-23.5-36.6-39.4-10-16.8-11.2-25.3-4.8-33.8,4-5.2,8.2-8,26.6-17.1,15.9-7.9,20.7-9.8,34.6-14.2,27.4-8.7,42.4-12,60.1-13,35.1-2.1,38.5-2,52.9,1.4,23.8,5.6,36.8,14.2,45,29.8,5.5,10.4,6.3,17.9,3.7,32.6-.5,3-1.2,6.8-1.5,8.4-1.5,8.6-3.7,13.8-7.1,17.2-7.3,7.1-19.5,5-21.7-3.7-.9-3.3-.1-7.2,2.7-14.1,4.9-12.1,5-17.6.3-27.4-7-14.6-17-20.3-39.5-22.4-22.6-2.1-37-.8-61.2,5.4-15.5,3.9-20.5,5.5-32.4,10.3-3.1,1.2-8.3,3.3-11.5,4.5-9.4,3.5-10.8,4.1-14.2,6.4-5.4,3.6-7.6,7.3-7.6,12.7,0,6.9,3,11.9,13.5,22.9,14.1,14.8,17.9,18.1,33.6,30,6.4,4.8,29.7,23.2,37.9,30,4.5,3.7,10.9,9.4,14.9,13.1,16.1,15.3,21.4,20.6,29.7,29.5,12,12.8,14.2,15.5,18.9,23.1,7.3,11.9,10.3,14.8,15.3,14.9,5.1,0,8.9-3.1,17.5-14.5,2.3-3.1,4.9-6.3,6.4-8,1.3-1.5,5.1-5.8,5.2-5.9,1-.9,7.4-8.6,14.4-17.1,2.5-3.1,7.7-9,11.9-13.6,4.4-4.9,7.7-8.6,13.1-15.1,2.7-3.3,7.4-8.9,10.4-12.3,13.1-15.4,14.8-17.7,21.9-29.6,5.6-9.4,8.7-12.9,13.5-15.3,11.9-5.9,23.3,3.3,20.8,16.7-.6,3.3-1.8,6.3-5.5,13.9-4,8.2-4.5,9.5-7.5,17.4-2,5.3-3.5,9.2-5.5,14-1.7,4.2-2.1,5-2.9,6.9-13.4,31.8-15.9,44.8-13.4,69.2,1.5,14.2,6,22.5,14.7,26.8,10.1,5.1,21.8,1.8,39.3-10.9,6-4.3,26.4-21.8,29.9-25.5,6.6-7.1,8.2-12.9,7.1-25.7-1.1-11.9-.8-18.2,1.6-39.6,3-26.7,13.6-66.6,24.5-92.2,1.3-3.2,3.6-8.4,5-11.8,9.1-21.5,14.8-30.4,27.9-43.8,30.2-30.9,65.6-36.2,75.2-11.4,5.2,13.4,2.1,41.8-6.9,64.4-1.9,4.8-21.5,44.1-27.5,55.2-2.5,4.7-5.4,10.1-6.4,12-9.7,18.4-17.8,31.2-36.5,57.2-4.5,6.2-6.7,8.9-12.2,14.8-8.1,8.6-10,11.5-10.6,16.1-1.4,9.7,10.2,17.6,20.6,14.2,4.6-1.5,8-4.2,13.9-10.8,4.6-5.2,7.9-8.8,10.9-11.9,11.4-11.8,13.9-14.6,26-29.8,5.6-7,8.6-10.6,19.1-22.8,3.2-3.8,6.7-7.9,7.7-9.1,8.1-9.8,14.3-16.3,24.9-26.1,3-2.8,7-6.6,8.9-8.4,9.6-9.3,14.9-13.7,21.8-18.2,13.2-8.6,23.7-12.3,34.7-12.3,10.6,0,15.7,2.8,24.1,13.4,6.5,8.1,7.9,9.2,18.8,14.1,12.7,5.7,16.4,13.1,11.5,23.2-1.3,2.7-1.9,3.7-5.8,9-6.5,9-7.9,11.7-13.6,25.9-6.7,16.9-8.5,23.3-8.8,32.3-.4,9.2,1.8,13.8,6.7,13.7,4.6,0,9.4-3.7,19.4-14.5,3.4-3.7,8.2-8.8,10.7-11.4s5.8-6.3,7.4-8.2c2.6-3.1,4.7-5.9,13.8-18.2,7.7-10.3,9.7-14.5,9.9-20.5.2-4.7-.2-6.2-4-16.6-6.7-18.3-.3-34.9,15.7-40.2,16.8-5.5,32.3,2,35.6,17.3,1.2,5.6.2,9.9-4.6,19.5-4.4,8.7-5.2,11.5-4.9,16.6.3,5.4,2.6,10.3,9.4,19.3,3.1,4.2,5,6.8,8.9,12.1,6,8.3,8.7,11.5,16.9,20.4,2.9,3.2,7.4,8.2,10,11.2,6.6,7.8,8.5,10,12.1,14.1,10,11.2,13.3,17.6,12.1,23.1-1.6,7-8.4,10.9-27.8,15.9-12.6,3.3-15.1,4-19.2,5.6-1.5.6-5.2,2.2-8.1,3.6-8.1,3.8-10.9,4.8-15,4.8-12.6,0-19.7-14.4-12.5-25.2,3.6-5.4,9.2-8,18.8-8.8,14.8-1.2,17.6-1.8,20.5-4.3,4.8-4.2,2.2-10.1-10.2-23.5-7.1-7.6-8.5-9.4-15.4-19.1-14.3-20.4-18.5-21.1-28.4-5-5.7,9.3-8.5,13-15.7,20.7-3.3,3.6-2.2,2.3-8.8,9.5-23.3,25.5-33.3,31.5-51.1,31.1-13-.4-21-3.5-25.1-9.6-2.1-3.1-3.1-6.4-4.5-13.9-1.7-9.5-2.9-12.1-5.8-13.1-3.6-1.3-8.1,2-18.2,13.1-20.6,22.7-36.2,30.5-59.7,29.5-12.8-.5-17.3-3.9-24.5-18.4-5.7-11.6-8.7-11.5-18.1.4-5.2,6.6-5.7,7.2-8.1,9.7-6.3,6.6-15.9,11.9-27.8,15.3-13.9,4-21.3,2.4-34.1-7.2-8.8-6.6-12.9-7.7-18.5-4.9-3.1,1.6-5.1,3.2-11.4,9.5-8.5,8.6-11.8,11.3-20.2,16.9-18.9,12.6-26.5,15.7-38.8,15.7-20.7,0-37-8.3-46.6-23.8-4.9-7.9-6.4-13-8.5-30.1-2.1-16.5-2.1-20,0-29.8,2.5-11.8,2.8-14.7,1.5-16.2-2.1-2.3-7.4,2.2-18,15.1-17.2,21-21.7,26.3-28.7,33.4-2.9,3-5.8,6-6.4,6.8-5.7,6.7-6.9,12.3-4.4,20,.9,2.9,1,3,4.1,9.9,6.8,14.9,9.4,27.8,9.4,45.8,0,18.9-1.9,26.9-11.3,48-6.9,15.6-11.4,22.9-22.6,37-13.3,16.6-18.3,21.6-38.6,38.3-11.7,9.7-17.1,12.7-39.4,21.8-10.2,4.2-18.3,5.5-26.2,4.2ZM384.4,563.4c2.2-.5,4.6-1.4,7.8-3,2.8-1.4,3.8-2,8.5-4.8,1.6-.9,4.2-2.5,5.9-3.4,11.8-6.9,15.7-10.1,26.4-21.4,2-2.1,6-6.4,8.9-9.4,11.9-12.6,16.6-19.2,24.6-34.6,10.9-21.2,15.4-39.2,14.3-57.5-1.3-22.3-6.4-32.9-13.9-29.1-3.2,1.6-5.6,4.2-11.9,12.9-4.8,6.6-7.5,10-11.5,14.2-9.4,10.3-12.5,14.1-21.2,26.3-1.4,2-3.3,4.6-4.3,5.9s-2.5,3.5-3.6,5-2.6,3.6-3.4,4.8c-4.3,6-13.8,21-13.8,21.8s-.6,1-1.2,2.2c-9.5,16-17.4,32.7-21.8,45.9-5.6,16.9-1.5,26.9,10.2,24.4ZM818.6,342.9c5.1-1.1,8.8-3.8,19-13.9,7.3-7.2,10-9.8,15-14.4,14.3-13.2,22.1-21.4,30-31.4,2.2-2.8,5.9-7.4,8.2-10.1,9-10.8,10.7-13.8,10.4-18.5-.4-8.2-11.8-15.3-21.3-13.3-5.6,1.2-9.8,3.9-20.4,12.9-12.8,10.9-22.8,22.6-34.7,40.4-11.7,17.5-15.9,27-16.2,36.3-.3,9.1,3.3,13.3,10.1,11.9ZM700.7,294.4c2.6-1.3,6.4-6,11-13.7,1.5-2.5,3.7-6.3,5-8.5,1.3-2.2,4.4-7.1,6.9-10.9,5.2-7.9,7.5-11.5,13.2-21.1,9.4-15.6,12.6-21.7,17.1-32.1,1.3-3.1,3.2-7.1,5.6-12.3,6.3-13.1,7.5-16.2,11.2-27.7,1.1-3.4,2.5-7.9,3.1-9.9,4.9-15.2,4.8-23.6-.2-26.1-5.2-2.6-13.8,2.5-24.9,15-14.3,16-18.2,22.3-24.4,40.2-2.4,6.8-3.9,10.7-6.4,16.1-.7,1.4-1.4,3.1-1.7,3.8-.3.6-1.1,2.5-1.9,4.1-6,12.8-9,23-12.4,43.4-1.3,7.5-1.7,10-3.5,18.5-2.5,12.2-2.8,19.1-.8,21.1.9.9,1.3.9,2.9,0ZM621.3,109.5c-11.3-1.6-17.5-7.5-17-16.3.6-11.6,11.9-20.1,22.8-17.1,13,3.6,21.2,20.7,13.7,28.8-3.7,3.9-11.7,5.9-19.5,4.7Z"/></symbol></svg>
+<nav class="nav" aria-label="Secciones">
+  <div class="l"><a class="nl" href="#perfil">Perfil</a><a class="nl" href="#debates">Debates</a><a class="nl" href="#municipios">Pauta paga</a></div>
+  <div class="brand"><svg class="sig-svg sm" role="img" aria-label="Silas"><use href="#assinatura"/></svg><span>· Portfolio MR 22</span></div>
+  <div class="r"><a class="nl" href="#estudios">Estudios</a><a class="nl" href="#ia">IA</a><a class="nl" href="#linha">Línea de tiempo</a><span class="lang" aria-label="Idioma"><a href="./">PT</a><a href="en.html">EN</a><a href="es.html" aria-current="page">ES</a></span></div>
+</nav>
+
+<header class="s lt hero">
+  <div class="wrap hero-grid">
+    <figure style="margin:0">
+      <div class="stage">
+        <img src="img/abertura.jpg" width="720" height="960" alt="Primera lámina del carrusel de biografía, fijado en el perfil">
+      </div>
+      <figcaption class="hero-cap">Carrusel de biografía · lámina 01 · fijado en el perfil · 08/09</figcaption>
+    </figure>
+    <div>
+      <div class="crumb"><span>Índice</span><span>/</span><span>Casos de estudio</span><span>/</span><b>001 Campaña MR 22</b></div>
+      <h1>Alta demanda, identidad intacta.</h1>
+      <p class="sub">Elecciones 2026 · Gobernación de Rondônia, Brasil</p>
+      <p class="lede">Entré a la campaña de Marcos Rogério (22) a la Gobernación de Rondônia como director de arte, para desplegar la identidad en lo digital. A partir de ella, usé inteligencia artificial para crear herramientas y automatizar la producción: cards de debate en tiempo real, piezas para los 52 municipios y la movilización salieron rápido, sin trabajo repetitivo para el equipo y sin perder la identidad. La campaña ganó en primera vuelta, el 4 de octubre de 2026.</p>
+      <dl class="specs">
+        <div><dt class="label">Cliente</dt><dd>Campaña Marcos Rogério 22, Gobernación de Rondônia</dd></div>
+        <div><dt class="label">Mi rol</dt><dd>Dirección de arte digital: lenguaje, curaduría de fotos, piezas y herramientas</dd></div>
+        <div><dt class="label">Punto de partida</dt><dd>Logotipo, tipografía, paleta y gráficos de otro director de arte</dd></div>
+        <div><dt class="label">Herramientas</dt><dd>Photoshop, Figma (auto layout y API), Claude Code, Python, GitHub Pages, Vercel</dd></div>
+      </dl>
+      <div class="tags">
+        <span class="pill">Director de arte</span><span class="pill">Diseñador gráfico</span><span class="pill">Creative engineer</span>
+        <a class="pill ghost" href="#numeros">Ver los números <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="s dk pad" id="numeros" aria-label="Números de la campaña">
+  <div class="wrap">
+    <div class="ntable">
+      <div class="tiles">
+        <div class="tile"><span class="mono">Producción en lote</span><b>807</b><p>piezas generadas en lote a partir de mis plantillas: 495 láminas de carrusel, 104 piezas por municipio y 208 stickers. Además, los cards que salieron de los estudios.</p></div>
+        <div class="tile"><span class="mono">Líneas de código</span><b>~20 mil</b><p>líneas de código en las herramientas, escritas con IA a partir de mis especificaciones</p></div>
+        <div class="tile"><span class="mono">Estudios web</span><b>9</b><p>estudios web que automatizan cards de la campaña: el equipo escribe el texto, elige la foto y descarga la pieza lista</p></div>
+        <div class="tile"><span class="mono">Trabajo manual evitado</span><b>~45 h</b><p>de trabajo manual absorbidas por la producción en lote, solo en las 807 piezas. Los cards de los estudios suman más: cada uno llevaba unos 8 minutos a mano.</p></div>
+        <div class="tile"><span class="mono">IA generativa en las piezas</span><b>0</b><p>imágenes o elementos gráficos generados por IA en las piezas que firmé: la IA quedó en la ingeniería, la creación quedó conmigo</p></div>
+        <div class="tile"><span class="mono">Del 1.er post a la victoria</span><b>54 días</b><p>entre el primer carrusel publicado, el 11/08, y la victoria en primera vuelta</p></div>
+      </div>
+      <div class="nfoot"><span class="mono muted">807 piezas · ~20 mil líneas · 9 estudios · ~45 h</span><a class="mono" href="#nota">Ver el cálculo →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="s dk pad cont" id="desafio" style="padding-top:0">
+  <div class="wrap cols">
+    <div>
+      <span class="label">Punto de partida</span>
+      <h2 style="font-size:clamp(34px,4.4vw,60px);line-height:1.02;margin-top:14px">Una identidad ya definida, y una campaña que necesitaba hablar el idioma de las redes.</h2>
+    </div>
+    <div class="rows">
+      <div class="row"><span class="mono muted">01</span><div><h3>Punto de partida</h3><div class="body"><p>Llegué con la base de la identidad ya definida por otro director de arte: logotipo, tipografía, paleta y gráficos. Mi misión era desplegar ese sistema en lo digital, donde la campaña necesitaba otro ritmo y más cercanía.</p></div></div><span class="sign">−</span></div>
+      <div class="row"><span class="mono muted">02</span><div><h3>Lenguaje</h3><div class="body"><p>Para las redes, opté por un lenguaje más crudo, liviano y humano, que transmitiera sentimiento y mostrara al candidato como el votante todavía no lo había visto.</p></div></div><span class="sign">−</span></div>
+      <div class="row"><span class="mono muted">03</span><div><h3>Estrategia documental</h3><div class="body"><p class="quote">En vez de repartir volantes, mostrar el recorrido de cerca.</p><p>Mantuve los elementos de la marca y cambié el tratamiento. La línea pasó a ser documental: en cada foto y en cada carrusel, quien seguía el perfil estaba ahí con el candidato, en las ciudades, con la gente. La elección de las fotos, la edición y el tratamiento quedaron bajo mi dirección, del avatar a los carruseles.</p></div></div><span class="sign">−</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="s lt pad" id="perfil">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label">Frente 01 / Perfil oficial</span><h2>El lenguaje aplicado: kits de perfil, carruseles y cards.</h2></div>
+      <div class="prose"><p>Las piezas del perfil se hicieron en Photoshop. En ellas, la foto conduce y la identidad de campaña entra como firma.</p></div>
+    </div>
+
+    <div class="block" style="margin-top:0">
+      <div class="block-head"><span class="label">Kit de perfil</span><span class="spec">avatar, portadas, destacadas y fijados</span></div>
+      <div class="enx">
+        <div>
+          <div class="disc"><img src="img/av-1.jpg" width="360" height="360" alt="Avatar del lanzamiento de la campaña" loading="lazy"></div>
+          <span class="mono muted">001 / Ago · 15–18/08</span>
+          <h3>Lanzamiento</h3>
+          <p>Kit completo para el estreno: avatar, portadas de Facebook, YouTube y X, destacadas de Instagram.</p>
+          <div class="dest" aria-label="Destacadas del lanzamiento"><img src="img/destaques-1-1.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-1-2.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-1-3.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-1-4.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-1-5.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-1-6.jpg" width="150" height="150" alt="" loading="lazy"></div>
+        </div>
+        <div>
+          <div class="disc"><img src="img/av-2.jpg" width="360" height="360" alt="Segundo avatar, reforzando el número 22" loading="lazy"></div>
+          <span class="mono muted">002 / Sep · 20–25/09</span>
+          <h3>Segundo kit</h3>
+          <p>Foto nueva y refuerzo del número del candidato en todo el perfil, con destacadas rehechas.</p>
+          <div class="dest" aria-label="Destacadas del segundo kit"><img src="img/destaques-2-1.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-2-2.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-2-3.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-2-4.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-2-5.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-2-6.jpg" width="150" height="150" alt="" loading="lazy"></div>
+        </div>
+        <div>
+          <div class="disc"><img src="img/av-3.jpg" width="360" height="360" alt="Nuevo ícono de perfil, de la recta final" loading="lazy"></div>
+          <span class="mono muted">003 / Sep · 29/09</span>
+          <h3>Recta final</h3>
+          <p>Nuevo ícono de perfil, también con refuerzo del número, para la última semana. Las destacadas del segundo kit se mantuvieron.</p>
+          <div class="dest" aria-label="Destacadas mantenidas del segundo kit"><img src="img/destaques-2-1.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-2-2.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-2-3.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-2-4.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-2-5.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-2-6.jpg" width="150" height="150" alt="" loading="lazy"></div>
+        </div>
+        <div>
+          <div class="disc"><img src="img/av-4.jpg" width="360" height="360" alt="Foto oficial del gobernador electo" loading="lazy"></div>
+          <span class="mono muted">004 / Oct · 05/10</span>
+          <h3>Gobernador electo</h3>
+          <p>Cuarto kit, ya con la foto oficial y destacadas nuevas, hecho al día siguiente de la victoria.</p>
+          <div class="dest" aria-label="Destacadas del gobernador electo"><img src="img/destaques-4-1.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-4-2.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-4-3.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-4-4.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-4-5.jpg" width="150" height="150" alt="" loading="lazy"><img src="img/destaques-4-6.jpg" width="150" height="150" alt="" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-head"><span class="label">Carruseles</span><span class="spec">1080 × 1440 · feed 3:4 · desplazá cada tira hacia el costado</span></div>
+      <div id="carrosseis"></div>
+    </div>
+
+    <div class="block">
+      <div class="block-head"><span class="label">Cards</span><span class="spec">piezas únicas · 1080 × 1440</span></div>
+      <div class="strip">
+        <figure><img src="img/c-cnn.jpg" width="400" height="535" alt="Card de la encuesta CNN" loading="lazy"><figcaption>Encuesta CNN · 12/09</figcaption></figure>
+        <figure><img src="img/c-quem-vota.jpg" width="400" height="533" alt="Card “Quien vota 22 vota 22”" loading="lazy"><figcaption>Quem vota Flávio · 25/09</figcaption></figure>
+        <figure><img src="img/c-eu-voto-por.jpg" width="400" height="533" alt="Card “Yo voto por”" loading="lazy"><figcaption>Direccionamientos · Eu voto por · 26/09</figcaption></figure>
+        <figure><img src="img/c-gov-que-conhece.jpg" width="400" height="533" alt="Card “Un gobernador que conoce Rondônia”" loading="lazy"><figcaption>Gov que conhece Rondônia · 02/10</figcaption></figure>
+        <figure><img src="img/c-colinha.jpg" width="400" height="533" alt="Colinha 22, el card machete para votar" loading="lazy"><figcaption>Passa a cola · Colinha 22 · 03/10</figcaption></figure>
+        <figure><img src="img/c-vitoria.jpg" width="400" height="533" alt="Card de la victoria en primera vuelta" loading="lazy"><figcaption>Victoria en 1.ª vuelta · 04/10</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s lt pad" id="apoiadores">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label">Frente 02 / Página de simpatizantes</span><h2>Una identidad aparte, para reforzar el mensaje.</h2></div>
+      <div class="prose"><p>Además del perfil oficial, hice los cards de la página de simpatizantes. Tenía identidad propia y funcionaba como refuerzo: amplificaba encuestas, debates y convocatorias con otra voz, sin repetir la estética del candidato.</p></div>
+    </div>
+    <div class="strip">
+      <figure><img src="img/ap-debate-encerrado.jpg" width="400" height="533" alt="Card de simpatizantes: debate terminado" loading="lazy"><figcaption>Debate encerrado</figcaption></figure>
+      <figure><img src="img/ap-verita-confirma.jpg" width="400" height="533" alt="Card de simpatizantes: Veritá confirma" loading="lazy"><figcaption>Veritá confirma</figcaption></figure>
+      <figure><img src="img/ap-10.jpg" width="400" height="533" alt="Card de simpatizantes 10" loading="lazy"><figcaption>Simpatizantes · 10</figcaption></figure>
+      <figure><img src="img/ap-11.jpg" width="400" height="533" alt="Card de simpatizantes 11" loading="lazy"><figcaption>Simpatizantes · 11</figcaption></figure>
+      <figure><img src="img/ap-8.jpg" width="400" height="533" alt="Card de simpatizantes 8" loading="lazy"><figcaption>Simpatizantes · 08</figcaption></figure>
+      <figure><img src="img/ap-2.jpg" width="400" height="533" alt="Card de simpatizantes 2" loading="lazy"><figcaption>Simpatizantes · 02</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="s dk pad" id="metodo">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label">Cómo escalar sin diluir</span><h2>Separar lo que es decisión de diseño de lo que es repetición.</h2></div>
+      <div class="prose"><p>El perfil oficial se trabajó pieza por pieza. En cambio, la <strong>movilización</strong> y la <strong>pauta paga</strong> pedían volumen. La movilización se enviaba por WhatsApp: cards de agenda, jornadas de stickers, caminatas y otros, con la agenda cambiando hora a hora. En la pauta paga, el mismo mensaje llegaba a los 52 municipios: los carruseles en formato feed y las demás piezas en 9:16, con la información contenida en el área 1:1, para funcionar con cualquier recorte. A eso se sumaban los cards de debate, que tenían que salir en tiempo real. A ese ritmo, los riesgos son tres: que la pieza llegue tarde, que el equipo se desgaste en trabajo repetitivo y que la identidad se desarme en cada nueva versión. Para estos dos frentes, organicé la producción en tres capas:</p></div>
+    </div>
+    <div class="steps">
+      <div><span class="mono muted">01 · Diseño</span><h3>La pieza nace en Figma o en Photoshop</h3><p>Grilla, tipografía, color, foto y jerarquía los decido yo, en la herramienta de diseño.</p></div>
+      <div><span class="mono muted">02 · Regla</span><h3>Cada decisión se vuelve medida</h3><p>Márgenes, interletrado, dónde corta la línea, qué crece y hacia dónde. El auto layout guarda esas reglas.</p></div>
+      <div><span class="mono muted">03 · Herramienta</span><h3>El equipo completa solo lo que cambia</h3><p>Texto, foto, ciudad, fecha. La herramienta bloquea la identidad y abre los campos variables.</p></div>
+    </div>
+    <div class="note"><span class="mono">Sobre la IA</span><p>De mi parte, nunca hubo la decisión de usar IA para generar imágenes o elementos gráficos en las piezas. La IA entró como compañera de programación (Claude Code), para escribir las herramientas y los scripts de producción en lote, y en tareas mecánicas como recortar a la persona del fondo de la foto.</p></div>
+  </div>
+</section>
+
+<section class="s dk pad" id="debates">
+  <div class="wrap">
+    <div class="head"><div><span class="label">Frente 03 / Debates en tiempo real</span><h2>Un estudio de citas para cada canal.</h2></div></div>
+    <div class="cols"><div class="prose">
+        <p>Para cada canal hice un marco propio en Figma y un estudio web que lo reproduce medida por medida. Durante la transmisión, el diseñador pega la frase, elige foto y plantilla y descarga el card listo en dos formatos: feed 3:4 y story 9:16. Los cards de abajo se publicaron en las mismas noches de debate, entre las 19:00 y las 22:30.</p>
+        <p>El corte de línea tiene que salir igual que en Figma. Por eso el estudio aplica la misma tipografía (Work Sans 30 sobre 40, interletrado −4%): sin el interletrado, la frase corta en otro lugar y el card pierde su forma.</p>
+      </div><ul class="lines">
+      <li><span>Rondoniaovivotv · 18/09</span><span>Azul, azul oscuro y blanco.</span></li>
+      <li><span>SIC TV | Record · 21/09</span><span>Layout invertido, texto arriba y pico de globo. Historial de los últimos 20 cards para reabrir y corregir.</span></li>
+      <li><span>Rede Amazônica | Globo · 29/09</span><span>Esquina de 125 px y adorno arriba, leyenda electoral ya con sombra.</span></li>
+      <li><span>Grupo SGC · 01/10</span><span>Esquinas de 50 px en diagonal y comillas en amarillo o azul, en las cuatro combinaciones.</span></li>
+      <li><span>Vista previa</span><span>El scroll hace zoom en la foto alrededor del cursor y el card se arrastra en vertical, con imán en la posición estándar.</span></li>
+    </ul></div>
+    <div class="strip" style="margin-top:clamp(28px,4vw,44px)">
+      <figure><img src="img/rt-1.jpg" width="420" height="560" alt="Card de cita publicado en el debate del 1 de septiembre" loading="lazy"><figcaption>01/09 · Estudio Aspas Debate · publicado 22:25</figcaption></figure>
+      <figure><img src="img/rt-2.jpg" width="420" height="560" alt="Card de cita del debate Rondoniaovivotv" loading="lazy"><figcaption>18/09 · Rondoniaovivotv · publicado 21:22</figcaption></figure>
+      <figure><img src="img/rt-3.jpg" width="420" height="560" alt="Card de cita del debate SIC TV Record" loading="lazy"><figcaption>21/09 · SIC TV | Record · publicado 22:25</figcaption></figure>
+      <figure><img src="img/rt-4.jpg" width="420" height="560" alt="Card de cita del debate Rede Amazônica Globo" loading="lazy"><figcaption>29/09 · Rede Amazônica | Globo · publicado 22:30</figcaption></figure>
+      <figure><img src="img/rt-5.jpg" width="420" height="560" alt="Card de cita del debate Grupo SGC" loading="lazy"><figcaption>01/10 · Grupo SGC · publicado 19:09</figcaption></figure>
+    </div>
+    <div class="shots">
+      <figure><img src="img/estudio-estudio-aspas-rede-amazonica.jpg" width="1200" height="750" alt="Interfaz del Estudio Aspas Rede Amazônica online" loading="lazy"><figcaption>Estudio Aspas Rede Amazônica, online en GitHub Pages</figcaption></figure>
+      <figure><img src="img/estudio-painel-estudios.jpg" width="1200" height="750" alt="Panel que reúne todos los estudios" loading="lazy"><figcaption>Panel de Estudios: una sola dirección para que el equipo abra cualquier herramienta</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="s lt pad" id="municipios">
+  <div class="wrap">
+    <div class="head"><div><span class="label">Frente 04 / Pauta paga por municipio</span><h2>Una plantilla, 52 ciudades, 495 láminas.</h2></div></div>
+    <div class="cols"><div class="prose">
+        <p>La pauta paga tuvo varios frentes a lo largo de la campaña. El de mayor escala fue la regionalización: cada municipio recibió un carrusel de hasta diez láminas con obras y propuestas de la ciudad. Diseñé una plantilla en Figma con auto layout, y las 52 versiones salieron de ella por edición vía API, revisadas pieza por pieza.</p>
+        <p>La misma lógica generó dos series por ciudad para pauta en todas las redes (Instagram, Facebook y las demás): <em>Conheça meu trabalho em {cidade} (“Conocé mi trabajo en {ciudad}”)</em> y la serie Salud, <em>{cidade} merece ser atendida em {cidade} (“{ciudad} merece ser atendida en {ciudad}”)</em>. Son 104 piezas más, diseñadas en 9:16 con la información siempre centrada en el área 1:1, para resistir cualquier recorte que hiciera la plataforma.</p>
+      </div><ul class="lines plain">
+      <li><span>En las series por municipio, el bloque del título crece hacia arriba, anclado sobre la franja azul. Un nombre largo empuja el borde superior y nunca invade el pie.</span></li>
+      <li><span>Leading trim a la altura de las mayúsculas: el espacio que mide el auto layout es el que se ve en la pieza.</span></li>
+      <li><span>Interlineado e interletrado del nombre de la ciudad en %, para escalar junto con la fuente.</span></li>
+      <li><span>Ancho máximo de 1012 px en el nombre, para cortar la línea en vez de salirse de la pieza.</span></li>
+      <li><span>En la serie Salud, el ancho de la fuente (de Condensed a Expanded) se eligió ciudad por ciudad: menos líneas, sin partir el nombre.</span></li>
+    </ul></div>
+    <div class="block">
+      <div class="block-head"><span class="label">Jaru, las diez láminas</span><span class="spec">1080 × 1440 cada una · 1 de 52</span></div>
+      <div class="strip lam" id="jaru"></div>
+    </div>
+    <div class="block">
+      <div class="block-head"><span class="label">Las 52 portadas</span><span class="spec">orden alfabético · Alta Floresta D’Oeste → Vilhena</span></div>
+      <div class="wall" id="wall-cidades"></div>
+    </div>
+  </div>
+</section>
+
+<section class="s dk pad" id="adesivos">
+  <div class="wrap">
+    <div class="head"><div><span class="label">Frente 05 / Movilización de la caravana</span><h2>208 stickers digitales en la víspera de la elección.</h2></div></div>
+    <div class="cols"><div class="prose">
+        <p>Para la caravana final, cada ciudad recibió cuatro stickers de story: <em>Tá fechada com o 22 (“cerrada con el 22”)</em>, <em>Destrava (“destrabá”)</em>, <em>Botar pra funcionar (“ponerla a funcionar”)</em> y <em>É Marcos Rogério 22 (“es Marcos Rogério 22”)</em>. Hice tres modelos a mano para cada serie, medí sus reglas y el resto se armó en auto layout en una mañana.</p>
+        <p>Cada serie tiene sus propias reglas, porque el nombre de la ciudad lo cambia todo: de Jaru, que entra en una palabra, a Nova Brasilândia D’Oeste.</p>
+      </div><ul class="lines plain">
+      <li><span>Franjas de 131 px que abrazan el texto; corte de línea sin dejar DE, DO o DA al final de la línea.</span></li>
+      <li><span>Nombre de una sola línea: <em>FECHADA</em> y <em>COM O 22</em> lado a lado cuando la primera línea supera los 763 px.</span></li>
+      <li><span>Grafía de los nombres igual que en el resto del material de la ciudad.</span></li>
+      <li><span>La palabra en tipografía de pincel es una fuente local que la API no carga: se clonó del modelo, nunca se reescribió.</span></li>
+      <li><span>Fondo transparente calculado a partir de dos versiones de cada sticker, sobre negro y sobre blanco.</span></li>
+    </ul></div>
+    <div class="panel">
+      <div class="block-head"><span class="label">Ji-Paraná, las cuatro series</span><span class="spec">PNG transparente · story sobre foto</span></div>
+      <div class="stickers">
+        <figure><img src="img/adesivo-fechada.webp" width="640" height="135" alt="Sticker Ji-Paraná cerrada con el 22" loading="lazy"><figcaption>Tá fechada com o 22 (“cerrada con el 22”)</figcaption></figure>
+        <figure><img src="img/adesivo-destrava.webp" width="640" height="142" alt="Sticker destrabá Ji-Paraná" loading="lazy"><figcaption>Destrava (“destrabá”)</figcaption></figure>
+        <figure><img src="img/adesivo-botar.webp" width="640" height="292" alt="Sticker poner Ji-Paraná a funcionar" loading="lazy"><figcaption>Botar pra funcionar (“ponerla a funcionar”)</figcaption></figure>
+        <figure><img src="img/adesivo-e-mr.webp" width="640" height="244" alt="Sticker Ji-Paraná es Marcos Rogério 22" loading="lazy"><figcaption>É Marcos Rogério 22 (“es Marcos Rogério 22”)</figcaption></figure>
+      </div>
+      <div class="wall stk" id="wall-adesivos" aria-label="Serie Tá fechada com o 22, 52 ciudades"></div>
+    </div>
+  </div>
+</section>
+
+<section class="s lt pad" id="estudios">
+  <div class="wrap">
+    <div class="head"><div><span class="label">Frente 06 / Herramientas para el equipo</span><h2>Nueve estudios web, una regla: la identidad no se abre.</h2></div></div>
+    <div class="cols"><div class="prose"><p>Cada estudio reproduce en canvas un card que diseñé en Figma, con las medidas tomadas del auto layout. El diseñador del equipo trabaja en el navegador, sin abrir archivos de diseño, y solo toca lo que puede cambiar. Donde no había costo de servidor, publiqué en GitHub Pages, abierto y fuera de los buscadores; donde había una API paga, en Vercel, con contraseña.</p></div><ul class="lines">
+      <li><span>Agenda Radio y TV</span><span>Recorte automático de la persona y cuatro capas: fondo desenfocado, foto nítida, elementos y el recorte encima, en el mismo registro.</span></li>
+      <li><span>Saiu na Mídia (salió en los medios)</span><span>La captura de la noticia entra en un card de ancho fijo y la altura sale de la imagen. Seis plantillas.</span></li>
+      <li><span>Citas · 5 versiones</span><span>Una para debates en general y una por canal, con historial, zoom y arrastre en la vista previa.</span></li>
+      <li><span>Caminatas</span><span>Ciudad, fecha y horario de la caminata sobre foto, con historial de los cards ya hechos.</span></li>
+      <li><span>Jornadas de stickers</span><span>El bloque de información crece hacia arriba desde el pie fijo. Día, fecha y horario cambian de color juntos.</span></li>
+      <li><span>Panel</span><span>Una sola dirección que lista y abre todos los estudios. Sumar uno nuevo es un ítem en la configuración.</span></li>
+    </ul></div>
+    <div class="shots">
+      <figure><img src="img/estudio-estudio-adesivacos.jpg" width="1200" height="750" alt="Interfaz del Estudio de Jornadas de stickers" loading="lazy"><figcaption>Estudio de Jornadas de stickers · card 1080 × 1920 con la guía de recorte 3:4 del feed</figcaption></figure>
+      <figure><img src="img/estudio-agenda.jpg" width="1200" height="750" alt="Estudio de cards de agenda, con el historial del equipo abierto" loading="lazy"><figcaption>Estudio de Agenda Radio y TV · historial del equipo con los cards guardados</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="s lt pad" id="aprovacao">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label">Frente 07 / Revisión y aprobación</span><h2>Ver la pieza como la va a ver el público, antes de publicar.</h2></div>
+      <div></div>
+    </div>
+    <div class="cols">
+      <div>
+        <h3 style="font-size:28px;margin-bottom:16px">Nube de carruseles</h3>
+        <ul class="lines plain">
+          <li><span>Biblioteca en la computadora que publica cada carrusel en un link fijo. Quien lo recibe lo abre en el celular, sin login; republicar cambia el contenido y mantiene el link.</span></li>
+          <li><span>13 carruseles publicados, 106 láminas, incluido video.</span></li>
+          <li><span>Video convertido a H.264 sin perder resolución ni fps, porque el HEVC original quedaba negro en Chrome de Android.</span></li>
+          <li><span>Miniatura liviana para que el link llegue con imagen en WhatsApp.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:28px;margin-bottom:16px">Simulación fiel a la app</h3>
+        <ul class="lines plain">
+          <li><span>El visor sigue las reglas de Instagram: todas las láminas en la proporción de la primera, avance después del 28% del ancho, encastre sin efecto rebote.</span></li>
+          <li><span>Vista previa del perfil en Figma, comparada con una captura de la app: grilla 3:4, tema claro y oscuro vinculados por variables. Ahí se probaron los kits de perfil antes de salir al aire.</span></li>
+          <li><span>Espejo de Photoshop: la pieza abierta aparece en el celular en cerca de medio segundo, sin trabar el programa.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s dk pad" id="ia">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label">Uso de inteligencia artificial</span><h2>Dónde entró la IA, y qué quedó conmigo.</h2></div>
+      <div></div>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Frente</th><th>Qué hizo la IA</th><th>Qué quedó en la dirección de arte</th></tr></thead>
+        <tbody>
+          <tr><td>Lenguaje y piezas</td><td>Nada.</td><td>Estrategia visual, elección y edición de fotos, kits de perfil, carruseles, cards.</td></tr>
+          <tr><td>Estudios web</td><td>Escribió el código a partir de las medidas y el comportamiento que especifiqué.</td><td>Layout, tipografía, color, qué puede y qué no puede cambiar, pruebas con el equipo.</td></tr>
+          <tr><td>Producción en lote en Figma</td><td>Clonó plantillas, cambió textos y armó auto layout vía API.</td><td>Las plantillas, las reglas de corte y de grafía, la revisión de cada pieza.</td></tr>
+          <tr><td>Fotos en los estudios</td><td>Recortó a la persona del fondo.</td><td>Elección de la foto, encuadre y composición.</td></tr>
+          <tr><td>Herramientas online</td><td>Versionado, deploy de los estudios, conversión de video y miniaturas de la nube de carruseles.</td><td>Dónde se aloja cada herramienta, quién accede y qué pasa a revisión.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="s dk pad" id="linha">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label">Línea de tiempo · fechas de los archivos</span><h2>De agosto a octubre.</h2></div>
+      <div></div>
+    </div>
+    <ol class="tl">
+      <li><time>11/08</time><p>Primeros carruseles en el perfil: Día del Estudiante y Rota 22.</p></li>
+      <li><time>15–18/08</time><p>Kit de lanzamiento: avatar, portadas y destacadas. Empieza el diseño de la plantilla de carrusel por municipio.</p></li>
+      <li><time>22/08</time><p>Nube de carruseles y simulador en el celular.</p></li>
+      <li><time>27–29/08</time><p>Estudios de Agenda, Saiu na Mídia, Jornadas de stickers y Citas; panel único.</p></li>
+      <li><time>01/09</time><p>Primer debate con cards en tiempo real.</p></li>
+      <li><time>05–08/09</time><p>Carruseles Rondônia é 22 y Alianza con los 52 municipios; fijados de biografía y propuestas.</p></li>
+      <li><time>15–18/09</time><p>Series por municipio para pauta: Conocé mi trabajo y Salud.</p></li>
+      <li><time>18/09</time><p>Debate Rondoniaovivotv, con estudio propio.</p></li>
+      <li><time>20/09</time><p>Segundo kit de perfil, con refuerzo del número.</p></li>
+      <li><time>21/09</time><p>Debate SIC TV | Record.</p></li>
+      <li><time>29/09</time><p>Debate Rede Amazônica | Globo. Nuevo ícono de perfil.</p></li>
+      <li><time>01/10</time><p>Debate Grupo SGC.</p></li>
+      <li><time>03/10</time><p>208 stickers para la caravana final, en una mañana.</p></li>
+      <li class="win"><time>04/10</time><p>Elección. Victoria en primera vuelta.</p></li>
+      <li><time>05/10</time><p>Kit de gobernador electo: foto oficial y destacadas nuevas.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="s lt pad" id="competencias">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label">Competencias</span><h2>Lo que muestra este trabajo.</h2></div>
+      <div></div>
+    </div>
+    <ul class="slash" style="border-top:1px solid var(--rule)">
+      <li><h3>Dirección de arte</h3><p>Desplegar una identidad existente en lo digital y conducir foto, edición y piezas en una línea documental, más liviana y más humana.</p></li>
+      <li><h3>Diseño gráfico</h3><p>Kits de perfil, carruseles y cards en Photoshop; cards de la página de simpatizantes; stickers con reglas por ciudad.</p></li>
+      <li><h3>Creative engineering</h3><p>Convertir reglas de diseño en herramientas y automatizaciones con IA: estudios web, producción en lote en Figma, publicación y revisión en el celular.</p></li>
+      <li><h3>Producción a escala</h3><p>Piezas por municipio para pauta, cards al ritmo de los debates y de la movilización, herramientas que el equipo usa sin capacitación.</p></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="s dk pad foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <h2 class="sig"><svg class="sig-svg lg" role="img" aria-label="Silas"><use href="#assinatura"/></svg></h2>
+      <ul class="roles-list"><li>Director de arte</li><li>Diseñador gráfico</li><li>Creative engineer</li></ul>
+    </div>
+    <div class="notes" id="nota">
+      <p>Números contados en los archivos de trabajo el 8 de octubre de 2026: backup de Google Drive, carpeta de Photoshop, archivo de Figma y repositorios de las herramientas. Las fechas vienen de los archivos (día/mes); los horarios de los cards de debate vienen del registro de publicación de Instagram (hora de Rondônia).</p>
+      <p>Las horas de trabajo manual son una estimación hecha con mis tiempos de referencia para adaptar cada pieza a mano: portada del carrusel 5 min, láminas 2 y 3 5 min cada una, demás láminas 2 min, pieza por municipio y sticker 3 a 5 min. Total de 2.394 a 3.018 minutos.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  function pad(n){return n<10?"0"+n:""+n}
+  function img(src,w,h,alt){var i=document.createElement("img");i.src=src;i.width=w;i.height=h;i.alt=alt;i.loading="lazy";return i}
+
+  // carrosséis do perfil: chave, título, nº de lâminas, lâminas em vídeo, nota
+  var CARROSSEIS=[
+    ["propostas","Propuestas",10,[10],"fijado en el perfil · 08/09"],
+    ["bio","Biografía",15,[2,7,15],"fijado en el perfil · 08/09"],
+    ["parceria","Alianza con los 52 municipios",6,[],"06/09"],
+    ["ro22","Rondônia é 22",8,[],"05/09"]
+  ];
+  var box=document.getElementById("carrosseis");
+  CARROSSEIS.forEach(function(c){
+    var sub=document.createElement("div");sub.className="sub";
+    var head=document.createElement("div");head.className="sub-head";
+    var h=document.createElement("h4");h.textContent=c[1];
+    var s=document.createElement("span");s.className="spec";
+    s.textContent=c[2]+" láminas"+(c[3].length?" · "+c[3].length+" en video, mostradas por su primer cuadro":"")+" · "+c[4];
+    head.appendChild(h);head.appendChild(s);sub.appendChild(head);
+    var strip=document.createElement("div");strip.className="strip lam";
+    for(var i=1;i<=c[2];i++){
+      var f=document.createElement("figure");
+      f.appendChild(img("img/car-"+c[0]+"-"+pad(i)+".jpg",300,400,c[1]+", lámina "+i));
+      if(c[3].indexOf(i)>-1){var v=document.createElement("span");v.className="vid";v.textContent="VIDEO";f.appendChild(v)}
+      strip.appendChild(f);
+    }
+    sub.appendChild(strip);box.appendChild(sub);
+  });
+
+  var jaru=document.getElementById("jaru");
+  for(var j=1;j<=10;j++) jaru.appendChild(img("img/jaru-"+pad(j)+".jpg",300,400,"Jaru, lámina "+j));
+
+  var CIDADES=["Alta Floresta D’Oeste","Alto Alegre dos Parecis","Alto Paraíso","Alvorada D’Oeste","Ariquemes","Buritis","Cabixi","Cacaulândia","Cacoal","Campo Novo de Rondônia","Candeias do Jamari","Castanheiras","Cerejeiras","Chupinguaia","Colorado do Oeste","Corumbiara","Costa Marques","Cujubim","Espigão D’Oeste","Governador Jorge Teixeira","Guajará-Mirim","Itapuã do Oeste","Jaru","Ji-Paraná","Machadinho D’Oeste","Ministro Andreazza","Mirante da Serra","Monte Negro","Nova Brasilândia D’Oeste","Nova Mamoré","Nova União","Novo Horizonte D’Oeste","Ouro Preto D’Oeste","Parecis","Pimenta Bueno","Pimenteiras D’Oeste","Porto Velho","Presidente Médici","Primavera de Rondônia","Rio Crespo","Rolim de Moura","Santa Luzia D’Oeste","Seringueiras","São Felipe D’Oeste","São Francisco do Guaporé","São Miguel do Guaporé","Teixeirópolis","Theobroma","Urupá","Vale do Anari","Vale do Paraíso","Vilhena"];
+  var w1=document.getElementById("wall-cidades"), w2=document.getElementById("wall-adesivos");
+  CIDADES.forEach(function(c,i){
+    var a=img("img/cidade-"+pad(i+1)+".jpg",240,320,"Portada del carrusel de "+c);a.title=c;w1.appendChild(a);
+    var b=document.createElement("img");b.src="img/fechada-"+pad(i+1)+".webp";b.loading="lazy";b.alt=c+" cerrada con el 22";b.title=c;w2.appendChild(b);
+  });
+})();
+</script>
+
+</body>
+</html>
